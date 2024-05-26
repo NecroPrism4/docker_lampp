@@ -10,11 +10,11 @@ Before you begin, make sure you have Docker installed on your machine.
 
 You can clone this repository to your local machine:
 
-```git clone <repository-url>```
+```git clone https://github.com/NecroPrism4/docker_lampp.git```
 
 Navigate to the cloned repository:
 
-```cd <repository-directory>```
+```cd docker_lampp```
 
 Create a .env file and specify your desired environment variables. You can use the .env.example file as a template.
 
