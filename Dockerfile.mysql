@@ -1,0 +1,14 @@
+FROM mysql:5.7
+
+# Copy initialization script to Docker entrypoint directory
+COPY init.sql /docker-entrypoint-initdb.d/
+
+# Set environment variables (optional)
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=mibd
+ENV MYSQL_USER=mibd
+ENV MYSQL_PASSWORD=mibd
+ENV MYSQL_ROOT_HOST=%
+
+# Expose MySQL port
+EXPOSE 3306

@@ -1,0 +1,43 @@
+version: '3.9'
+services:
+  php-env:
+    build:
+      context: .  
+      dockerfile: Dockerfile 
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 9000:80
+    depends_on:
+      - mysql_db
+    networks:
+      - lampp
+  mysql_db:
+    build:
+      context: .  
+      dockerfile: Dockerfile.mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - lampp
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - 9001:80
+    environment:
+      PMA_ARBITRARY: 1  
+    depends_on:
+      - mysql_db
+    networks:
+      - lampp
+
+volumes:
+  mysql:
+
+networks:
+  lampp:
+    driver: bridge
+      
