@@ -8,7 +8,7 @@ Before you begin, make sure you have Docker installed on your machine.
 
 ## Getting Started
 
-###1. Clone this repository to your local machine:
+You can clone this repository to your local machine:
 
 ```git clone <repository-url>```
 
